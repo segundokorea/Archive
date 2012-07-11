@@ -1,0 +1,22 @@
+{
+  "author": "Sean Clemmer <sczizzo@gmail.com>",
+  "name": "Prelude",
+  "description": "A port of Haskell's standard Prelude to CoffeeScript",
+  "version": "0.0.0",
+  "homepage": "https://github.com/sczizzo/Prelude",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sczizzo/Prelude.git"
+  },
+  "main": "./lib/prelude.js",
+  "scripts": {
+    "test": "vows test/* --spec"
+  },
+  "engines": {
+    "node": "~0.6.5"
+  },
+  "dependencies": {
+    "vows": "0.6.x"
+  },
+  "devDependencies": {}
+}

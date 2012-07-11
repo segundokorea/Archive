@@ -1,0 +1,20 @@
+{
+  "name": "Douglass",
+  "description": "Node.js API for the CTA BusTracker",
+  "version": "0.0.0",
+  "licenses": [{"type": "MIT"}],
+  "author": "Sean Clemmer <sczizzo@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sczizzo/Douglass.git"
+  },
+  "engines": {
+    "node": "~0.6.5"
+  },
+  "dependencies": {
+    "htmlparser2": "2.0.x",
+    "querystring": "0.1.x",
+    "underscore": "1.2.x"
+  },
+  "main" : "./lib/douglass.js"
+}

@@ -1,0 +1,14 @@
+node_modules
+Procfile
+.rvmrc
+.bundle
+.DS_Store
+.project
+*.sqlite3
+*.log
+*.tmproj
+*.swp
+*~
+*.mp3
+*.jpg
+*.png

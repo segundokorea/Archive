@@ -1,0 +1,43 @@
+= Grapeleaf
+Objective-C implementation of a generic feed-forward, back-propagating, one-hidden-layer neural network. Even so, *Grapeleaf* provides basic protocols useful for any type of neural network.
+
+== Sources & Inspiration
+I am deeply indebted to more than a few great books and websites, not the least which among these is <em>Object-Oriented Neural Networks in C++</em> by Joey Rogers and <em>Neural Smithing: Supervised Learning in Feedforward Artificial Neural Networks</em> by Russell D. Reed and Robert J. Marks II.
+
+== Overview of Backpropagation
+Taken wholesale from <em>Neural Smithing</em>.
+1. Present a training pattern and propagate it through the network to obtain the outputs.
+2. Compare the outputs with the desired values and calculate the error.
+3. Calculate the derivatives of the error with respect to the weights.
+4. Adjust the weights to minimize the error.
+5. Repeat until the error is acceptably small or time is exhausted.
+
+=== Step 1. Forward Propagation
+A note on transformation functions: Although backpropagation may use any differential activation function, *Grapeleaf* implements only the sigmoid, a common choice for such neural networks. Each node evaluated in order from hidden to output.
+1. Compute the weighted sum of inputs for each node.
+2. Pass this through the transfer function to obtain the output for each node.
+
+=== Steps 2 & 3. Error & Derivative Calculation
+For the output neuron, the error follows from the derivative of the transfer function and the difference between the observed and expected outputs. For hidden neurons, we again use the derivative of the transfer function with each input to the neuron.
+
+=== Step 4. Adjusting the Weights
+Using the derivatives calculated in the last steps, the network attempts to adjust the weights in order to minimize the error. *Grapeleaf* adjust the weights in the opposite direction of the error with some small constant called the <em>learning rate</em>.
+
+=== Step 5. Lather, Rinse, Repeat
+The above steps are repeated until some goal is reached. In this implementation, we have a tolerance for output error values.
+
+== Terminology
+Neural networking projects often use a variety of terms to label common components their field. *Grapeleaf* strives to be consistent in its terminology:
+Network:: A collection of Neurons, Synapses, and Patterns, short for <em>Artificial Neural Network</em>.
+Neuron::  Elsewhere called a node. The learning unit.
+Synapse:: Elsewhere called a link. A connection between two Neurons.
+Pattern:: Collection of inputs with their associated output.
+
+== Compiling & Usage
+Compiling and running *Grapeleaf* is relatively easy. From the command line:
+  $ make Clean
+  $ make
+  $ ./Grapeleaf
+You may also wish to run simply:
+  $ make Test
+Due to some problems with the pre-processor and the way GNU or POSIX extensions are handled, *Grapeleaf* probably will not compile on GNU/Linux-based system. Just a guess, I haven't tried it yet.
