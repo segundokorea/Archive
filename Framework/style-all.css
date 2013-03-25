@@ -1,0 +1,440 @@
+/*
+  Drupal 6 Framework
+  Created by Andre Griffin
+  Forked by Sean Clemmer
+------------------------------------------------
+  1. Global
+  2. Layout
+  3. Main
+  4. Sidebars
+  5. Header
+  6. Navigation
+  7. Nodes
+  8. Comments
+  9. Blocks
+ 10. Footer
+ 11. CSS Support
+
+*/
+
+
+
+/**
+ * 1. GLOBAL
+ */
+
+html { font-size: 16px; line-height: 24px; }
+
+.sans-serif, body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #222;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-top: 0.5em;
+}
+
+h1, .h1 {
+  font-size: 2em;
+  line-height: 1.5;
+}
+
+h2, .h2 {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+h3, .h3 {
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+
+h4, h5, h6, .h4, .h5, .h6 {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 0 0 1.5em;
+}
+
+p:last-child { margin-bottom: 0; }
+
+a { color: #069; text-decoration: none; }
+
+a:visited { color: #309; }
+
+a:hover, a:active, li a.active  { color: #39f; }
+
+a:focus { outline: thin dotted; }
+
+a:hover, a:active { outline: 0; }
+
+
+
+/**
+ * 2. LAYOUT
+ */
+div.admin .left {
+  float: left;
+  width: 100%;
+  margin-left: 0;
+}
+
+div.admin .right {
+  float: left;
+  width: 100%;
+  margin-right: 0;
+}
+
+.help-items {
+  float: left;
+  width: 100%;
+  padding-right: 0;
+}
+
+.help-items ul { margin: 0; }
+
+.help-items-last ul { margin-bottom: 1em; }
+
+#first-time p:first-child { margin-top: 1.5em; }
+
+#first-time strong { margin: 0; padding: 0; }
+
+
+
+/**
+ * 3. MAIN
+ */
+
+
+
+/**
+ * 4. SIDEBARS
+ */
+
+
+
+/**
+ * 5. HEADER
+ */
+
+#header { padding-top: 1em; }
+
+#site-name {
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 1.25em;
+}
+
+#site-name a:hover { text-decoration: none; }
+
+
+/* hides "Search this site:" label from search forms */
+div#edit-search-theme-form-1-wrapper label, 
+div#edit-search-block-form-1-wrapper label {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+
+
+/**
+ * 6. NAVIGATION
+ */
+
+#navigation {
+  clear: both;
+  margin: 0;
+  padding: 0;
+}
+
+ul#main-menu,
+ul#secondary-menu {
+  clear: both;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul#main-menu li,
+ul#secondary-menu li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+ul#main-menu li a,
+ul#secondary-menu li a {
+  padding-right: 1em;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+.breadcrumb {}
+
+#skip-link { position: absolute; }
+
+.item-list ul {
+  margin: 0;
+  padding: 0 0 0 1.5em;
+}
+
+.item-list ul li {
+  margin: 0;
+  padding: 0;
+}
+
+ul.links li {
+  margin: 0;
+  padding: 0;
+}
+
+.tabs-wrapper {
+  border-bottom: 1px solid #333;
+  margin: 0;
+  clear: both;
+}
+
+ul.primary {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.primary li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+ul.primary li a {
+  border: none;
+  line-height: 1.5em;
+  margin: 0;
+  padding: 0 1em;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+ul.primary li a:hover,
+ul.primary li a.active {
+  background: #666;
+  border: none;
+  color: #fff;
+}
+
+ul.primary li a:hover {
+  background: #888;
+  text-decoration: none;
+}
+
+ul.secondary {
+  background-color: #666;
+  border-bottom: none;
+  clear: both;
+  margin: 0;
+  padding: 0;
+}
+
+ul.secondary li {
+  border-right: none;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+ul.secondary li a,
+ul.secondary li a:link {
+  border: none;
+  color: #ccc;
+  line-height: 1.5em;
+  padding: 0 1em;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+ul.secondary li a:hover,
+ul.secondary li a.active {
+  background: #888;
+  color: #fff;
+  text-decoration: none;
+}
+
+ul.secondary a.active { border-bottom: none; }
+
+
+
+/**
+ * 7. NODES
+ */
+
+.node { margin-bottom: 1.5em; }
+
+.terms { margin: 0 0 1.5em; }
+
+.terms span { font-weight: bold; }
+
+.profile { margin: 1.5em 0; }
+
+.profile h3 { border: none; }
+
+.profile dt { margin-bottom: 0; }
+
+.profile dd { margin-bottom: 1.5em; }
+.profile dd:last-child { margin-bottom: 0; }
+
+input[type="radio"] { width: 1.2em; }
+
+select { margin: 0 1px; }
+
+.teaser-checkbox { padding: 0; marign-bottom: -1em; }
+
+.form-item  { margin: 0 0 1em; }
+
+.form-item:last-child { margin-bottom: 0; }
+
+form { margin: 1em 0; }
+
+fieldset { margin: 0 0 1em; }
+
+fieldset:last-child { margin-bottom: 0; }
+
+td, th { padding: 0.25em; }
+
+legend { font-weight: bold; }
+
+.form-checkboxes, .form-radios { margin: 0; }
+
+.form-checkboxes .form-item, .form-radios .form-item { margin: 0; }
+
+.form-item .description { color: #666; }
+
+
+
+/**
+ * 8. COMMENTS
+ */
+
+#comments {
+  clear: both;
+  margin-top: 1.5em;
+}
+
+.comment { margin-bottom: 1.5em; }
+.comment:last-child { margin-bottom: 0; }
+
+.comment .new {
+  color: red;
+  text-transform: capitalize;
+  margin-left: 1em;
+}
+
+
+
+/**
+ * 9. BLOCKS
+ */
+
+.block {
+  margin-bottom: 1.5em;
+}
+
+#user-login-form {
+  padding: 0;
+  text-align: left;
+}
+
+#user-login-form .form-item { margin: 1em 0; }
+
+#user-login-form .item-list ul li {
+  background: none;
+  margin: 1em 0;
+  padding: 0;
+}
+
+section.block div.edit { display: none; }
+
+div.view { position: relative; }
+
+div.view div.views-hide-hover,
+div.view:hover div.views-hide,
+div.view div.views-admin-links,
+div.view div.views-admin-links-hover,
+div.view div.views-admin-links:hover {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  font-size: 9px;
+  margin-right: 0;
+  margin-top: 0;
+  padding: 0;
+  padding-left: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}
+
+div.view div.views-admin-links li a { color: #999; }
+
+
+
+/**
+ * 10. FOOTER
+ */
+
+
+
+/**
+ * 11. CSS SUPPORT
+ */
+
+/**
+ * Hide elements from all users.
+ *
+ * Used for elements which should not be immediately displayed to any user. An
+ * example would be a collapsible fieldset that will be expanded with a click
+ * from a user.
+ */
+.element-hidden {
+  display: none;
+}
+
+/**
+ * Hide elements visually, but keep them available for screen-readers.
+ *
+ * Used for information required for screen-reader users to understand and use
+ * the site where visual display is undesirable. Information provided in this
+ * manner should be kept concise, to avoid unnecessary burden on the user.
+ * "!important" is used to prevent unintentional overrides.
+ */
+.element-invisible {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/**
+ * The .element-focusable class extends the .element-invisible class to allow
+ * the element to be focusable when navigated to via the keyboard.
+ */
+.element-invisible.element-focusable:active,
+.element-invisible.element-focusable:focus {
+  position: static !important;
+  clip: auto;
+}

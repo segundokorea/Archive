@@ -1,0 +1,19 @@
+name        = Responsive Framework
+description = Responsive fork of the Framework theme for Drupal (6.x-3.0)
+core        = 6.x
+engine      = phptemplate
+
+stylesheets[all][] = reset.css
+stylesheets[all][] = normalize.css
+stylesheets[all][] = style.css
+stylesheets[all][] = 1140.css
+
+scripts[] = head.js
+scripts[] = mediaqueries.js
+
+regions[left]       = Left sidebar
+regions[right]      = Right sidebar
+regions[header]     = Header
+regions[content]    = Content
+regions[navigation] = Navigation
+regions[footer]     = Footer

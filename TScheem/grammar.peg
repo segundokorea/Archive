@@ -1,0 +1,85 @@
+start = expression
+
+
+// Helpers
+
+digit = [0-9]
+
+letter = [a-zA-Z]
+
+upper = [A-Z]
+
+lower = [a-z]
+
+atomic = digit / superAtomic
+
+superAtomic = letter / special / "\\"
+
+special = [_?!+\-=<>@#$%^&*/.]
+
+alphanum = digit / letter
+
+sep = [ \n\t\r]
+
+ws = sep*
+
+specialChar = spaceChar / tabChar / newlineChar
+
+spaceChar = "\\space" { return S.Char(" "); }
+
+tabChar = "\\tab" { return S.Char("\t"); }
+
+newlineChar = "\\newline" { return S.Char("\n"); }
+
+escapedChar = escapedQuote / escapedTab / escapedNewline
+
+escapedQuote = "\\\"" { return "\""; }
+
+escapedTab = "\\t" { return "\t"; }
+
+escapedNewline = "\\n" { return "\n"; }
+
+
+// The Meat
+
+expression =
+  comment / quote / list / bool / char / nil / num / atom / text
+
+comment = ";" ' '? c:[^\n]* ws
+
+quote =
+  "'" e:expression ws
+    { return S.Quote(e); }
+
+list =
+  "(" ws es:expression+ ws ")" ws
+    { return S.List(es); }
+
+bool =
+  "true" ws { return S.Bool(true); }
+  / "false" ws { return S.Bool(false); }
+
+char =
+  "\\" c:alphanum sep+
+    { return S.Char(c); }
+  / specialChar
+
+nil =
+  "nil" ws { return S.Nil(); }
+
+num =
+  digits:digit+ pt:"."? frac:digit* ws {
+    var num = digits.join('') + pt + frac.join('');
+    var n = parseFloat(num);
+    return S.Num(n);
+  }
+
+atom =
+  a:superAtomic as:atomic* ws
+    { return S.Atom(a + as.join('')); }
+
+text =
+  "\"" s:notEndOfText* "\"" ws
+    { return S.Text(s.join('')); }
+
+notEndOfText = escapedChar / [^'"']

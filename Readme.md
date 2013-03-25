@@ -1,11 +1,14 @@
 - AStar: A* (Ruby Quiz #98)
 - Automata: Cellular Automata (Ruby Quiz #134)
 - BKTree: Simple implementation of BK-Trees
+- Calc: CMSC-22300 Homework 6 - An Interactive Calculator
+- CEK: A simple CEK-style interpreter supporting a modest extension of the lambda calculus
 - Chip8: Chip-8 (Ruby Quiz #88)
 - Douglass: Node.js package for the Chicago Transit Authority's Bus Tracker API
 - EvenTree: Interviewstreet Even Tree Challenge
 - Factorize: Recursive, memoized prime factorization in Ruby
 - Folding: Grid Folding (Ruby Quiz #63)
+- Framework: Responsive fork of the Framework theme for Drupal (6.x-3.0)
 - Grapeleaf: Simple neural network implemented in Objective-C
 - Housie: Housie (Ruby Quiz #114)
 - Huffman: Huffman Encoder (Ruby Quiz #123)
@@ -18,5 +21,6 @@
 - Sokoban: Sokoban (Ruby Quiz #5)
 - TicTacToe: Four-by-four tic-tac-toe with artificial intelligence using alpha-beta pruning
 - TicTacToeJava: Console-based tic-tac-toe implementation with AI
+- TScheem: Extension of TScheem, a toy language introduced by Nathan's University PL101
 - TScheem: Extension of TScheem, a toy language introduced by Nathan's University PL101
 - Warnsdorff: Pen and Paper (Ruby Quiz #90)

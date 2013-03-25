@@ -1,0 +1,38 @@
+Sean Clemmer
+CMSC-22300 Homework 6
+An Interactive Calculator
+
+Files:
+* calc - Script to compile and execute the program
+* Calc.hs - Contains main function and REPL
+* Eval.hs - Expression evaluation (expression -> result)
+* Lexer.hs - Tokenization (input -> tokens)
+* Parser.hs - Parsing (tokens -> expression)
+* Reader.hs - Reader monad and helpers
+* README - This file
+* Syntax.hs - Abstract syntax elements
+* test - Script to compile and execute the tests
+* Test.hs - Non-exhaustive test suite
+* Token.hs - Token declarations
+
+No need to build the program, just run "./calc" from this directory.
+
+After "calc" starts, you should see the input prompt "$>" where you
+can make declarations or evaluate expressions. After a declaration
+is made, the program will respond with the "<=" prompt and the name
+of the declaration just made. Similarly, after an expression is
+evaluated, the program responds with the "=>" prompt and the result.
+
+Here's an example session using a recursive function, a conditional
+expression, and a variable with some algebraic expressions:
+$> fun fact n = if n > 0 then n * fact(n-1) else 1
+<= fact
+$> let x = 5
+<= x
+$> fact(x)
+=> 120
+$> if fact(2 * (x-1)) > 200 then 1 else ~1
+=> 1
+$>
+
+Use ^C (control+C) to exit.
