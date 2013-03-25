@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby -w
+require './paper'
+nrows = ARGV.empty? ? 2 : ARGV.shift.to_i
+ncols = ARGV.empty? ? 2 : ARGV.shift.to_i
+instructions = ARGV.empty? ? 'RB' : ARGV.shift
+puts paper = Paper.new(nrows, ncols)
+puts paper.fold(instructions.split('')).inspect

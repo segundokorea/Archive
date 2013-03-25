@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby -w
+require './warnsdorff'
+variation = :classic
+variation = :pnp if ARGV.length == 2 and ARGV.shift == '-p'
+exit if ARGV.empty?
+puts WarnsdorffMethod.new(ARGV[0].to_i, variation).board

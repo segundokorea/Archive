@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby -w
+require './housie'
+puts Book.new

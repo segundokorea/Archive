@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby -w
+
+def merge row
+  raise ArgumentError, "Row cannot be empty" if row.empty?
+  result = []
+  (row.length - 1).times do |i|
+    result << row[i] + row[i+1]
+  end
+  return result
+end
+
+def pascal nrows
+  raise ArgumentError, "Must have one or more rows" if nrows < 1
+  return [[1]] if nrows == 1
+  prev_rows = pascal(nrows - 1)
+  prev_rows << [1] + merge(prev_rows.last) + [1]
+end
+
+def triangle nrows
+  rows = pascal(nrows.to_i)
+
+  # Width of largest number
+  lrow  = rows.last
+  lnum  = lrow[(lrow.length / 2).floor]
+  llen  = lnum.to_s.length
+  llen += (llen + 1) % 2
+
+  # Width of longest row
+  rows.map! do |row|
+    row.map { |n| n.to_s.center llen }.join(' ')
+  end
+  maxl  = rows.last.length
+  maxl += (maxl + 1) % 2
+
+  rows.map { |row| row.center maxl }
+end
+
+
+
+puts triangle(ARGV[0] || 10)

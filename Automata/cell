@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby -w
+require './automata'
+num   = ARGV.empty? ? 110 : ARGV.shift.to_i
+steps = ARGV.empty? ?  20 : ARGV.shift.to_i
+start = ARGV.empty? ? '1' : ARGV.shift.gsub(/[^01]+/,'')
+char  = ARGV.empty? ? '|' : ARGV.shift.chars.first
+puts Automaton.new(num, steps, start, char)

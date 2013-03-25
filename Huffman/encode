@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby -w
+require './huffman'
+huff = Huffman.new ARGV.join(' ')
+
+encoded_message = huff.data.groups_of(8).map(&:join)
+encoded_message = encoded_message.groups_of(4).map {|bs| bs.join(' ')}.join("\n")
+encoded_bytes   = huff.data.length / 8
+encoded_padding = huff.padding
+original        = huff.message
+original_bytes  = huff.message.length
+compression     = "%.1f" % [100 * (1 - encoded_bytes.to_f / original_bytes.to_f)]
+
+puts "Encoded:\n#{encoded_message}"
+puts "Encoded Bytes: #{encoded_bytes}"
+puts "Encoded Padding: #{encoded_padding}"
+puts
+puts "Original:\n#{original}"
+puts "Original Bytes: #{original_bytes}"
+puts
+puts "Compressed: #{compression}%"

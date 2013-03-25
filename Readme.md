@@ -1,0 +1,22 @@
+- AStar: A* (Ruby Quiz #98)
+- Automata: Cellular Automata (Ruby Quiz #134)
+- BKTree: Simple implementation of BK-Trees
+- Chip8: Chip-8 (Ruby Quiz #88)
+- Douglass: Node.js package for the Chicago Transit Authority's Bus Tracker API
+- EvenTree: Interviewstreet Even Tree Challenge
+- Factorize: Recursive, memoized prime factorization in Ruby
+- Folding: Grid Folding (Ruby Quiz #63)
+- Grapeleaf: Simple neural network implemented in Objective-C
+- Housie: Housie (Ruby Quiz #114)
+- Huffman: Huffman Encoder (Ruby Quiz #123)
+- Kata: Programming drills and exercises
+- ppPascal: ppPascal (Ruby Quiz #84)
+- Prelude: Node.js package for Haskell-like functional programming
+- QRCODE: Music visualizer and experimental language for ARTV-22502
+- Roman: Roman Numerals (Ruby Quiz #22)
+- Scripts: Random scripts and utilities, mostly from CMSC-16200
+- Sokoban: Sokoban (Ruby Quiz #5)
+- TicTacToe: Four-by-four tic-tac-toe with artificial intelligence using alpha-beta pruning
+- TicTacToeJava: Console-based tic-tac-toe implementation with AI
+- TScheem: Extension of TScheem, a toy language introduced by Nathan's University PL101
+- Warnsdorff: Pen and Paper (Ruby Quiz #90)

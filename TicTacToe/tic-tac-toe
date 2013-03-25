@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby -w
+require './game'
+include Game
+
+b = new_board
+x = new_player :x
+o = new_player :o
+winner = play b, x, o
+
+if winner
+  puts "#{winner} wins!"
+else
+  puts "It's a draw!"
+end

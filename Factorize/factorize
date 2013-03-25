@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby -w
+require './factorization'
+exit 1 if ARGV.empty?
+puts Factorization.new(ARGV[0].to_i)

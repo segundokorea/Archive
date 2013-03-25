@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby -w
+require './roman'
+
+ARGV.pop until ARGV.empty?
+
+puts "^D to exit..."
+while (print ">> " ; $stdout.flush ; l = gets)
+  l = l.chomp
+  print "=> "
+  if l =~ /\A\d+\z/
+    print Roman::encode(l.to_i)
+  elsif l =~ /\A[IVXLCDM]+\z/i
+    print Roman::decode(l.upcase)
+  end
+  puts
+end
