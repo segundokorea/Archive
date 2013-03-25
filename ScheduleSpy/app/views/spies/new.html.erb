@@ -1,0 +1,35 @@
+<% javascript( "schedulespy" ) %>
+
+<%= form_for( @spy ) do |f| %>
+  <% if @spy.errors.any? %>
+    <h1>Can&#8217;t begin operation: <%= pluralize( @spy.errors.count, "error" ) %></h1>
+
+    <ul class="errors">
+      <% @spy.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <span id="department-course-section">
+    <div class="field">
+      <%= f.label :department %>
+      <%= f.select :department, { 'Department...' => '' }.merge( Spy::DEPARTMENTS ), {}, { 'tabindex' => '1' } %>
+    </div>
+    <div class="field">
+      <%= f.label :course %>
+      <%= f.text_field :course, { 'tabindex' => '2', 'title' => '<b><i>Course</i></b>: Should be a number, like <b>10100</b>' } %>
+    </div>
+    <div class="field">
+      <%= f.label :section %>
+      <%= f.text_field :section, { 'tabindex' => '3', 'title' => '<b><i>Section</i></b>: Two characters, like <b>00</b> or <b>AA</b>' } %>
+    </div>
+  </span>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email, { 'value' => @spy.email, 'tabindex' => '4', 'title' => '<b><i>Email</i></b>: Use the <b>@uchicago.edu</b> one' } %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Begin Operation', { 'tabindex' => '5' } %>
+  </div>
+<% end %>

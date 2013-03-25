@@ -1,0 +1,314 @@
+// Variables
+@lorange   : #eebd9c;
+@orange    : #c76725;
+@green     : #597d3b;
+@lgreen    : #c9eeab;
+@navy      : #172930;
+@plum      : #6e2145;
+@lrust     : #eba9a1;
+@rust      : #a33b2e;
+@gold      : #ffefc3;
+@yellow    : #fff9c3;
+@cardboard : #a49d96;
+@beige     : #d0c2b3;
+@sand      : #eeeae5;
+@gutter    : 1.25%;
+
+
+// Mixins
+.transition(@property:color, @duration:0.3s, @type:ease) {
+  -webkit-transition : @property @duration @type;
+  -moz-transition : @property @duration @type;
+  -o-transition : @property @duration @type;
+}
+
+.transition2(@property1:color, @duration1:0.3s, @type1:ease, @property2:background-color, @duration2:0.3s, @type2:ease) {
+  -webkit-transition : @property1 @duration1 @type1, @property2 @duration2 @type2;
+  -moz-transition : @property1 @duration1 @type1, @property2 @duration2 @type2;
+  -o-transition : @property1 @duration1 @type1, @property2 @duration2 @type2;
+}
+
+.highlight(@color:#fff, @radius:1px, @x-offset:0, @y-offset:1px) {
+  text-shadow : @x-offset @y-offset @radius @color;
+}
+
+.text-highlight(@properties:none) {
+  text-shadow : @properties;
+}
+
+.shadow(@properties:none) {
+  box-shadow : @properties;
+  -webkit-box-shadow : @properties;
+  -moz-box-shadow : @properties;
+}
+
+
+// More Mixins
+.left {
+  float : left;
+}
+
+.right {
+  float : right;
+}
+
+.clear {
+  clear : both;
+  overflow : hidden;
+  width : 100%;
+}
+
+.errors {
+  list-style-type : none;
+  color : @rust;
+  font-weight : bold;
+  .highlight(#bbb, 2px, 0, 0);
+}
+
+.code {
+  font-family : "Monaco", monospace;
+}
+
+.adelle {
+  font-family : "adelle-1", "adelle-2";
+}
+
+.serif {
+  font-family : Georgia, Times, serif;
+}
+
+.sans-serif {
+  font-family : Helvetica, Verdana, sans-serif;
+}
+
+
+
+// Generics
+* {
+  margin : 0;
+  padding : 0;
+}
+
+html {
+  background-color : #fff;
+  text-align : center;
+  .sans-serif;
+}
+
+body {
+  color : @navy;
+  font-size : 100%;
+  line-height : 1.5em;
+  .sans-serif;
+}
+
+a {
+  .transition(color, 0.2s);
+  color : @green;
+  text-decoration : none;
+
+  :hover {
+    text-decoration : underline;
+  }
+
+  :active {
+    color : @plum;
+  }
+
+  :visited {
+    color : @rust;
+  }
+}
+
+p {
+  padding-bottom : 1em;
+
+
+  :last-child, :only-child {
+    padding-bottom : 0;
+  }
+}
+
+nav, section, aside, article, figure, header, footer, hgroup {
+  display : block;
+}
+
+nav > ul, footer > ul {
+  list-style-type : none;
+}
+
+nav > ul > li, footer > ul > li {
+  display : inline-block;
+  text-align : center;
+}
+
+
+// Forms
+input[type='text'] {
+  line-height : 1.25em;
+  padding : 0 0.15em 0 0.15em;
+  margin : 0.50em;
+  color : #bbb !important;
+  // border : 1px solid #bbb !important;
+  // background-color : #fff;
+  // font-size : 0.9em;
+  // font-weight : bold;
+  .transition(background-color, 0.3s);
+  // .adelle;
+}
+
+input[type='text'].rejected {
+  color : @rust !important;
+  // border : 1px solid @rust !important;
+  background-color : @lrust;
+  .shadow( 0 0 0.25em @rust );
+}
+
+input[type='text'].undisturbed {
+/*  .shadow( 0 0 0.25em #bbb );*/
+}
+
+input[type='text'].validated {
+  color : @green !important;
+  // border : 1px solid @green !important;
+  background-color : @lgreen;
+  .shadow( 0 0 0.25em @green );
+}
+
+input[type='text'].processing {
+  color : @orange !important;
+  // border : 1px solid @orange !important;
+  background-color : @lorange;
+  .shadow( 0 0 0.25em @orange );
+}
+
+input[type='text']:focus {
+  // border : 1px solid #ccc !important;
+  color : #000 !important;
+  background-color : #fff !important;
+}
+
+input[type='submit'] {
+  margin-top : 0.75em;
+}
+
+select, input[type='text'] {
+  width : 245px;
+}
+
+select { width: 252px; }
+
+
+.qtip {
+  font-family : Helvetica, Arial, sans-serif;
+  font-size : 0.85em;
+}
+
+
+// Structure & Layout
+html {
+  body {
+    margin : 0 auto 0 auto;
+    padding-bottom : 1.5em;
+
+    a#wtf {
+      font-size : 0.8em;
+      color : @rust;
+      text-decoration : none;
+      display : block;
+      background-color : @lorange;
+      .sans-serif;
+    }
+
+    a#wtf:hover {
+      color : #000;
+      cursor : pointer;
+    }
+
+    #help {
+      max-width : 300px;
+      font-size : 0.8em;
+      margin : 0 auto 0 auto;
+      padding : 0;
+      .sans-serif;
+      text-align : left;
+    }
+
+    > header, > footer {
+      padding : 0 0.8% 0 0.8%;
+
+      h1, a, a:visited {
+        color : @green;
+      }
+
+      a {
+        text-decoration : none;
+        .highlight(#fff, 2px);
+        .transition;
+
+        :hover {
+          color : @orange;
+          text-decoration : none;
+        }
+
+        :active {
+          color : @rust;
+        }
+      }
+    }
+
+    > header {
+      padding-top : 2.5em;
+      font-size : 1.75em;
+
+      h1, h1 > a {
+        text-decoration : none;
+        .highlight(#555, 2px, 0, 0);
+        .adelle;
+      }
+
+      h3 {
+        clear: both;
+        line-height: 1.25em;
+        font-size: 0.6em;
+        margin-top: 0.75em;
+        color: #666;
+        .highlight(#555, 1px, 0, 0);
+      }
+    }
+
+
+    > section {
+      padding : 0 0.25em;
+      margin : 0.5em 1em 1em;
+
+      h1 {
+        color : @plum;
+        font-size : 1.5em;
+        padding : 0.5em;
+        .highlight(#777, 2px, 0, 0);
+      }
+
+      #notice {
+        color : @orange;
+      }
+
+      footer {
+        margin : 0.5em;
+
+        ul {
+
+          li {
+            margin : 0 0.25em 0 0.25em;
+          }
+        }
+      }
+    }
+
+    > footer {
+      font-size : 0.7em;
+      clear : both;
+      .sans-serif;
+    }
+  }
+}

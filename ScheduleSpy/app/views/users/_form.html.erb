@@ -1,0 +1,28 @@
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <h1>Can&#8217;t create user: <%= pluralize( @user.errors.count, "error" ) %></h1>
+
+    <ul class="errors">
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </p>
+
+  <!-- TODO: Add the password field here -->
+
+  <p><%= f.submit %></p>
+<% end %>

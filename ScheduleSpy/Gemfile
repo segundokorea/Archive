@@ -1,0 +1,20 @@
+source :rubygems
+
+gem 'rails', '~> 3.0.0'
+gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'ruby-debug19'
+gem 'nokogiri'
+gem 'rack'
+gem 'devise'
+gem 'cancan'
+gem 'jquery-rails'
+gem 'less', '~> 1.2'
+gem 'high_voltage'
+gem 'god'
+gem 'daemons'
+
+group :development, :test do
+  gem 'ruby-debug19'
+  gem 'rspec-rails'
+  gem 'nifty-generators'
+end

@@ -1,3 +1,4 @@
+- AAA: An Accumulator Simulator and Compiler (Final Project for CMSC-22200)
 - AStar: A* (Ruby Quiz #98)
 - Automata: Cellular Automata (Ruby Quiz #134)
 - BKTree: Simple implementation of BK-Trees
@@ -17,6 +18,7 @@
 - Prelude: Node.js package for Haskell-like functional programming
 - QRCODE: Music visualizer and experimental language for ARTV-22502
 - Roman: Roman Numerals (Ruby Quiz #22)
+- ScheduleSpy: Class full? Get in first with ScheduleSpy
 - Scripts: Random scripts and utilities, mostly from CMSC-16200
 - Sokoban: Sokoban (Ruby Quiz #5)
 - TicTacToe: Four-by-four tic-tac-toe with artificial intelligence using alpha-beta pruning
